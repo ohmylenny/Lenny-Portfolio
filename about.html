@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+}
+nav a {
+text-decoration: none;
+margin: 0 10px;
+color: #000;
+padding: 5px 12px;
+border-radius: 4px;
+transition: 0.2s;
+}
+nav a.active {
+background: #000;
+color: #FFF;
+}
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 15px;
+padding: 20px;
+}
+.grid-item img {
+width: 100%;
+display: block;
+cursor: pointer;
+}
+.lightbox {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.lightbox.hidden {
+display: none;
+}
+.lightbox img {
+max-width: 90%;
+max-height: 90%;
+}
+.close {
+position: absolute;
+top: 20px;
+right: 30px;
+color: #FFF;
+font-size: 40px;
+cursor: pointer;
+}
+
+.about {
+padding: 40px;
+max-width: 700px;
+margin: auto;
+}
