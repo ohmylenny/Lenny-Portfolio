@@ -5,34 +5,24 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* --- HEADER SIDE BY SIDE --- */
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  text-align: center;
   padding: 20px;
 }
 
-/* Profile image */
 .profile-img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
+  width: 100px;
   border-radius: 50%;
 }
 
-/* Name logo */
 .name-logo {
-  height: 40px;
-  width: auto;
+  width: 140px;
+  display: block;
+  margin: 10px auto;
 }
 
-/* Navigation bar (now moved below header row) */
 nav {
-  width: 100%;
-  text-align: center;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 nav a {
@@ -49,7 +39,6 @@ nav a.active {
   color: #FFF;
 }
 
-/* --- GRID --- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -63,8 +52,38 @@ nav a.active {
   cursor: pointer;
 }
 
-/* --- LIGHTBOX POP-UP --- */
 .lightbox {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #FFF;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.about {
+  padding: 40px;
+  max-width: 700px;
+  margin: auto;
+}
