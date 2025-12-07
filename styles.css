@@ -87,3 +87,19 @@ nav a.active {
   max-width: 700px;
   margin: auto;
 }
+
+/* Social link style */
+.social-link {
+  color: #000;              /* black text */
+  text-decoration: none;    /* no underline */
+  font-weight: 600;         /* slight emphasis */
+  border-bottom: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.social-link:hover {
+  color: #fff;              /* invert on hover */
+  background: #000;         /* black highlight */
+  padding: 2px 6px;         /* subtle boxed hover */
+  border-radius: 4px;
+}
