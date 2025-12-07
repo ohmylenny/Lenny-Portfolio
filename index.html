@@ -1,52 +1,40 @@
 <!DOCTYPE html>
-</head>
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portfolio – Home</title>
-<link rel="stylesheet" href="styles.css" />
-<script defer src="lazyload.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="autoGrid.js"></script>
+  <script defer src="lazyload.js"></script>
 </head>
 <body>
-<header>
-<img src="assets/profile.jpg" alt="Profile" class="profile-img" />
-<img src="assets/name.png" alt="Name Logo" class="name-logo" />
-<nav>
-<a href="index.html" class="active">Work</a>
-<a href="about.html">About & Contact</a>
-</nav>
-</header>
+  <header>
+    <img src="assets/profile.png" alt="Profile" class="profile-img" />
+    <img src="assets/name.png" alt="Name Logo" class="name-logo" />
+    <nav>
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About & Contact</a>
+    </nav>
+  </header>
 
-<main class="grid">
-<!-- Example image items -->
-<div class="grid-item"><img data-src="assets/work1.jpg" class="lazy" alt="work1" /></div>
-<div class="grid-item"><img data-src="assets/work2.jpg" class="lazy" alt="work2" /></div>
-<div class="grid-item"><img data-src="assets/work3.jpg" class="lazy" alt="work3" /></div>
-<div class="grid-item"><img data-src="assets/work4.jpg" class="lazy" alt="work4" /></div>
-<!-- Add more items here -->
-</main>
+  <main class="grid"></main>
 
-<div id="lightbox" class="lightbox hidden">
-<span class="close">×</span>
-<img id="lightbox-img" />
-</div>
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close">×</span>
+    <img id="lightbox-img" />
+  </div>
 
-<script>
-const images = document.querySelectorAll('.grid img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.close');
-
-images.forEach(img => {
-img.addEventListener('click', () => {
-lightboxImg.src = img.src;
-lightbox.classList.remove('hidden');
-});
-});
-
-closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
-</script>
+  <script>
+    document.addEventListener('click', e => {
+      if (e.target.tagName === 'IMG' && e.target.closest('.grid-item')) {
+        document.getElementById('lightbox-img').src = e.target.src;
+        document.getElementById('lightbox').classList.remove('hidden');
+      }
+      if (e.target.classList.contains('close')) {
+        document.getElementById('lightbox').classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
