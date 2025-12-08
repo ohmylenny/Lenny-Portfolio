@@ -103,3 +103,9 @@ nav a.active {
   padding: 2px 6px;         /* subtle boxed hover */
   border-radius: 4px;
 }
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;       /* optional: makes it easier to read */
+}
